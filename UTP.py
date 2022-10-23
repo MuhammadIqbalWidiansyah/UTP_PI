@@ -16,15 +16,16 @@ loop = True
 
 while(loop):
     os.system('cls')
-        username = input("Masukan Nama Anda\t: ")
+    username = input("Masukan Nama Anda: ")
     print("Nama Anda\t\t:", username.upper())
     print("\nKaset Yang Tersedia\t: \n")
 
     for i in range(0,7):
         print(i + 1, "", kaset[i], "\t\tHarga Sewa :", sewa[i])
-   
 
-    pilihan = eval(input("\nMasukan Kaset Yang Ingin Disewa\t: "))
+    print()
+
+    pilihan = eval(input("\nMasukan Kaset Yang Ingin Disewa: "))
 
     try:
         if pilihan == 1:
@@ -42,19 +43,33 @@ while(loop):
         elif pilihan == 7:
             print("Anda Memilih\t\t:", kaset[pilihan-1])
         else :
-            print(" Tidak ada")
+            print("Tidak ada")
 
-  
-        print("\nApakah Anda Ingin Menyewa Lagi ?")
+        print("Harga sewa\t\t:", sewa[pilihan-1])
+    
+        bayar = eval(input("Masukkan Uang Anda: "))
+        print("Uang Anda\t\t:", bayar)
+
+        while bayar < sewa[pilihan-1]:  
+            outkurang = sewa[pilihan-1] - bayar 
+            print("Uang Anda kurang\t:", outkurang)
+            kurang = eval(input("Masukkan Uang Kembali: "))
+            print("Masukkan Uang Kembali\t:", kurang)
+            bayar += kurang
+
+        kembalian = bayar - sewa[pilihan-1]
+
+        struk()
+
+        print("\nApakah Anda Ingin Menyewa Lagi?")
         print("1. Ya\n2. Tidak")
 
-        pil = eval(input("Masukan Pilihan : "))
+        pil = eval(input("Masukan Pilihan: "))
 
         if pil == 2:
             loop = False
             print("\nProgram Dihentikan")
             print("Terimakasih Telah Menggunakan Program Kami")
-        else:
-            print("\nProgram Di Ulang\n")
+
     except:
         print("Pilihan Invalid, Program Tidak Bisa Dilanjutkan")
