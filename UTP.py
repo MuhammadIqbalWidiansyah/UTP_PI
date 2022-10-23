@@ -16,6 +16,9 @@ loop = True
 
 while(loop):
     os.system('cls')
+    
+    
+    try:
   
   
         print("\nApakah Anda Ingin Menyewa Lagi ?")
@@ -29,3 +32,5 @@ while(loop):
             print("Terimakasih Telah Menggunakan Program Kami")
         else:
             print("\nProgram Di Ulang\n")
+    except:
+        print("Pilihan Invalid, Program Tidak Bisa Dilanjutkan")
