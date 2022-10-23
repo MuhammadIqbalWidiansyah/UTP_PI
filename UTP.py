@@ -22,8 +22,7 @@ while(loop):
 
     for i in range(0,7):
         print(i + 1, "", kaset[i], "\t\tHarga Sewa :", sewa[i])
-
-    print()    
+   
 
     pilihan = eval(input("\nMasukan Kaset Yang Ingin Disewa\t: "))
 
